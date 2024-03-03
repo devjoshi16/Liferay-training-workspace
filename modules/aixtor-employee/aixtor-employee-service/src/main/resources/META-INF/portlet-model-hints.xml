@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.aixtor.employee.model.Branch">
+		<field name="uuid" type="String" />
+		<field name="branchId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" />
+		<field name="countryId" type="long" />
+		<field name="stateId" type="long" />
+		<field name="cityId" type="long" />
+	</model>
+	<model name="com.aixtor.employee.model.City">
+		<field name="uuid" type="String" />
+		<field name="cityId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="cityName" type="String" />
+		<field name="stateId" type="long" />
+	</model>
+	<model name="com.aixtor.employee.model.Department">
+		<field name="uuid" type="String" />
+		<field name="departmentId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" />
+		<field name="departmentHead" type="String" />
+	</model>
+	<model name="com.aixtor.employee.model.Designation">
+		<field name="uuid" type="String" />
+		<field name="designationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" />
+	</model>
+	<model name="com.aixtor.employee.model.Employee">
+		<field name="uuid" type="String" />
+		<field name="employeeId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="firstName" type="String" />
+		<field name="lastName" type="String" />
+		<field name="email" type="String" />
+		<field name="mobileNumber" type="long" />
+		<field name="departmentId" type="long" />
+		<field name="branchId" type="long" />
+		<field name="designationId" type="long" />
+		<field name="address" type="String" />
+	</model>
+	<model name="com.aixtor.employee.model.State">
+		<field name="uuid" type="String" />
+		<field name="stateId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="stateName" type="String" />
+		<field name="countryId" type="long" />
+	</model>
+</model-hints>

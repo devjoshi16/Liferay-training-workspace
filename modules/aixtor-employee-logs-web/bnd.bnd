@@ -1,0 +1,4 @@
+Bundle-Name: com-aixtor-employee-logs-web-logs
+Bundle-SymbolicName: com.aixtor.employee.logs
+Bundle-Version: 1.0.0
+Export-Package: com.aixtor.employee.logs.constants

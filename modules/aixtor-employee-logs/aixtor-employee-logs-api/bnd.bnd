@@ -1,0 +1,10 @@
+Bundle-Name: aixtor-employee-logs-api
+Bundle-SymbolicName: com.aixtor.employee.logs.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.aixtor.employee.logs.exception,\
+	com.aixtor.employee.logs.model,\
+	com.aixtor.employee.logs.service,\
+	com.aixtor.employee.logs.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../aixtor-employee-logs-service/service.xml

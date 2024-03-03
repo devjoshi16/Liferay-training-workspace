@@ -1,0 +1,11 @@
+dependencies {
+	compile project(":modules:aixtor-employee-logs:aixtor-employee-logs-api")
+
+	compileOnly group: "com.liferay.portal", name: "release.dxp.api"
+}
+
+buildService {
+	apiDir = "../aixtor-employee-logs-api/src/main/java"
+}
+
+group = "com.aixtor.employee.logs"

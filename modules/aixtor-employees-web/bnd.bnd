@@ -1,0 +1,4 @@
+Bundle-Name: aixtor-employees-web
+Bundle-SymbolicName: com.aixtor.employee.web
+Bundle-Version: 1.0.0
+Export-Package: com.aixtor.employee.constants

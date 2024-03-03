@@ -1,0 +1,10 @@
+Bundle-Name: aixtor-employee-api
+Bundle-SymbolicName: com.aixtor.employee.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.aixtor.employee.exception,\
+	com.aixtor.employee.model,\
+	com.aixtor.employee.service,\
+	com.aixtor.employee.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../aixtor-employee-service/service.xml
