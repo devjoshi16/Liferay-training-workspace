@@ -30,8 +30,8 @@ public class UpdatePasswordJspOverride implements CustomJspBag{
 	@Override
 	public String getCustomJspDir() {
 		log.info("Custom jsp bag Class is called ===========!!!!!!!!\n\n");
-//		return "META-INF/resources/jsps/";
-		return "META-INF/resources/";
+		return "META-INF/resources/jsps/";
+//		return "META-INF/resources/";
 	}
 
 	@Override
