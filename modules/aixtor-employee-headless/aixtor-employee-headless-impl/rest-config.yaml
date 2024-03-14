@@ -1,0 +1,9 @@
+apiDir: "../aixtor-employee-headless-api/src/main/java"
+apiPackagePath: "com.aixtor.employee.headless"
+application:
+  baseURI: "/aixtor-employee-headless"
+  className: "AixtorEmployeeHeadlessApplication"
+  name: "AixtorEmployeeHeadless"
+author: "dev.joshi"
+# clientDir: "../aixtor-employee-headless-client/src/main/java"
+# testDir: "../aixtor-employee-headless-test/src/testIntegration/java"

@@ -1,0 +1,5 @@
+Bundle-Name: aixtor-fragment-termsofuse-hook
+Bundle-SymbolicName: aixtor.fragment.termsofuse.hook
+Bundle-Version: 1.0.0
+Fragment-Host: com.liferay.layout.utility.page.terms.of.use;bundle-version="1.0.11"
+Portal-Bundle-Version: 7.4.13

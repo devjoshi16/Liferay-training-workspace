@@ -1454,9 +1454,9 @@ public class DepartmentPersistenceImpl
 	private static final String _FINDER_COLUMN_UUID_C_COMPANYID_2 =
 		"department.companyId = ?";
 
-	private FinderPath _finderPathWithPaginationFindByname;
-	private FinderPath _finderPathWithoutPaginationFindByname;
-	private FinderPath _finderPathCountByname;
+	private FinderPath _finderPathWithPaginationFindBydepartmentName;
+	private FinderPath _finderPathWithoutPaginationFindBydepartmentName;
+	private FinderPath _finderPathCountBydepartmentName;
 
 	/**
 	 * Returns all the departments where name = &#63;.
@@ -1465,8 +1465,9 @@ public class DepartmentPersistenceImpl
 	 * @return the matching departments
 	 */
 	@Override
-	public List<Department> findByname(String name) {
-		return findByname(name, QueryUtil.ALL_POS, QueryUtil.ALL_POS, null);
+	public List<Department> findBydepartmentName(String name) {
+		return findBydepartmentName(
+			name, QueryUtil.ALL_POS, QueryUtil.ALL_POS, null);
 	}
 
 	/**
@@ -1482,8 +1483,10 @@ public class DepartmentPersistenceImpl
 	 * @return the range of matching departments
 	 */
 	@Override
-	public List<Department> findByname(String name, int start, int end) {
-		return findByname(name, start, end, null);
+	public List<Department> findBydepartmentName(
+		String name, int start, int end) {
+
+		return findBydepartmentName(name, start, end, null);
 	}
 
 	/**
@@ -1500,11 +1503,11 @@ public class DepartmentPersistenceImpl
 	 * @return the ordered range of matching departments
 	 */
 	@Override
-	public List<Department> findByname(
+	public List<Department> findBydepartmentName(
 		String name, int start, int end,
 		OrderByComparator<Department> orderByComparator) {
 
-		return findByname(name, start, end, orderByComparator, true);
+		return findBydepartmentName(name, start, end, orderByComparator, true);
 	}
 
 	/**
@@ -1522,7 +1525,7 @@ public class DepartmentPersistenceImpl
 	 * @return the ordered range of matching departments
 	 */
 	@Override
-	public List<Department> findByname(
+	public List<Department> findBydepartmentName(
 		String name, int start, int end,
 		OrderByComparator<Department> orderByComparator,
 		boolean useFinderCache) {
@@ -1536,12 +1539,12 @@ public class DepartmentPersistenceImpl
 			(orderByComparator == null)) {
 
 			if (useFinderCache) {
-				finderPath = _finderPathWithoutPaginationFindByname;
+				finderPath = _finderPathWithoutPaginationFindBydepartmentName;
 				finderArgs = new Object[] {name};
 			}
 		}
 		else if (useFinderCache) {
-			finderPath = _finderPathWithPaginationFindByname;
+			finderPath = _finderPathWithPaginationFindBydepartmentName;
 			finderArgs = new Object[] {name, start, end, orderByComparator};
 		}
 
@@ -1578,12 +1581,12 @@ public class DepartmentPersistenceImpl
 			boolean bindName = false;
 
 			if (name.isEmpty()) {
-				sb.append(_FINDER_COLUMN_NAME_NAME_3);
+				sb.append(_FINDER_COLUMN_DEPARTMENTNAME_NAME_3);
 			}
 			else {
 				bindName = true;
 
-				sb.append(_FINDER_COLUMN_NAME_NAME_2);
+				sb.append(_FINDER_COLUMN_DEPARTMENTNAME_NAME_2);
 			}
 
 			if (orderByComparator != null) {
@@ -1638,11 +1641,12 @@ public class DepartmentPersistenceImpl
 	 * @throws NoSuchDepartmentException if a matching department could not be found
 	 */
 	@Override
-	public Department findByname_First(
+	public Department findBydepartmentName_First(
 			String name, OrderByComparator<Department> orderByComparator)
 		throws NoSuchDepartmentException {
 
-		Department department = fetchByname_First(name, orderByComparator);
+		Department department = fetchBydepartmentName_First(
+			name, orderByComparator);
 
 		if (department != null) {
 			return department;
@@ -1668,10 +1672,11 @@ public class DepartmentPersistenceImpl
 	 * @return the first matching department, or <code>null</code> if a matching department could not be found
 	 */
 	@Override
-	public Department fetchByname_First(
+	public Department fetchBydepartmentName_First(
 		String name, OrderByComparator<Department> orderByComparator) {
 
-		List<Department> list = findByname(name, 0, 1, orderByComparator);
+		List<Department> list = findBydepartmentName(
+			name, 0, 1, orderByComparator);
 
 		if (!list.isEmpty()) {
 			return list.get(0);
@@ -1689,11 +1694,12 @@ public class DepartmentPersistenceImpl
 	 * @throws NoSuchDepartmentException if a matching department could not be found
 	 */
 	@Override
-	public Department findByname_Last(
+	public Department findBydepartmentName_Last(
 			String name, OrderByComparator<Department> orderByComparator)
 		throws NoSuchDepartmentException {
 
-		Department department = fetchByname_Last(name, orderByComparator);
+		Department department = fetchBydepartmentName_Last(
+			name, orderByComparator);
 
 		if (department != null) {
 			return department;
@@ -1719,16 +1725,16 @@ public class DepartmentPersistenceImpl
 	 * @return the last matching department, or <code>null</code> if a matching department could not be found
 	 */
 	@Override
-	public Department fetchByname_Last(
+	public Department fetchBydepartmentName_Last(
 		String name, OrderByComparator<Department> orderByComparator) {
 
-		int count = countByname(name);
+		int count = countBydepartmentName(name);
 
 		if (count == 0) {
 			return null;
 		}
 
-		List<Department> list = findByname(
+		List<Department> list = findBydepartmentName(
 			name, count - 1, count, orderByComparator);
 
 		if (!list.isEmpty()) {
@@ -1748,7 +1754,7 @@ public class DepartmentPersistenceImpl
 	 * @throws NoSuchDepartmentException if a department with the primary key could not be found
 	 */
 	@Override
-	public Department[] findByname_PrevAndNext(
+	public Department[] findBydepartmentName_PrevAndNext(
 			long departmentId, String name,
 			OrderByComparator<Department> orderByComparator)
 		throws NoSuchDepartmentException {
@@ -1764,12 +1770,12 @@ public class DepartmentPersistenceImpl
 
 			Department[] array = new DepartmentImpl[3];
 
-			array[0] = getByname_PrevAndNext(
+			array[0] = getBydepartmentName_PrevAndNext(
 				session, department, name, orderByComparator, true);
 
 			array[1] = department;
 
-			array[2] = getByname_PrevAndNext(
+			array[2] = getBydepartmentName_PrevAndNext(
 				session, department, name, orderByComparator, false);
 
 			return array;
@@ -1782,7 +1788,7 @@ public class DepartmentPersistenceImpl
 		}
 	}
 
-	protected Department getByname_PrevAndNext(
+	protected Department getBydepartmentName_PrevAndNext(
 		Session session, Department department, String name,
 		OrderByComparator<Department> orderByComparator, boolean previous) {
 
@@ -1802,12 +1808,12 @@ public class DepartmentPersistenceImpl
 		boolean bindName = false;
 
 		if (name.isEmpty()) {
-			sb.append(_FINDER_COLUMN_NAME_NAME_3);
+			sb.append(_FINDER_COLUMN_DEPARTMENTNAME_NAME_3);
 		}
 		else {
 			bindName = true;
 
-			sb.append(_FINDER_COLUMN_NAME_NAME_2);
+			sb.append(_FINDER_COLUMN_DEPARTMENTNAME_NAME_2);
 		}
 
 		if (orderByComparator != null) {
@@ -1907,9 +1913,10 @@ public class DepartmentPersistenceImpl
 	 * @param name the name
 	 */
 	@Override
-	public void removeByname(String name) {
+	public void removeBydepartmentName(String name) {
 		for (Department department :
-				findByname(name, QueryUtil.ALL_POS, QueryUtil.ALL_POS, null)) {
+				findBydepartmentName(
+					name, QueryUtil.ALL_POS, QueryUtil.ALL_POS, null)) {
 
 			remove(department);
 		}
@@ -1922,10 +1929,10 @@ public class DepartmentPersistenceImpl
 	 * @return the number of matching departments
 	 */
 	@Override
-	public int countByname(String name) {
+	public int countBydepartmentName(String name) {
 		name = Objects.toString(name, "");
 
-		FinderPath finderPath = _finderPathCountByname;
+		FinderPath finderPath = _finderPathCountBydepartmentName;
 
 		Object[] finderArgs = new Object[] {name};
 
@@ -1939,12 +1946,12 @@ public class DepartmentPersistenceImpl
 			boolean bindName = false;
 
 			if (name.isEmpty()) {
-				sb.append(_FINDER_COLUMN_NAME_NAME_3);
+				sb.append(_FINDER_COLUMN_DEPARTMENTNAME_NAME_3);
 			}
 			else {
 				bindName = true;
 
-				sb.append(_FINDER_COLUMN_NAME_NAME_2);
+				sb.append(_FINDER_COLUMN_DEPARTMENTNAME_NAME_2);
 			}
 
 			String sql = sb.toString();
@@ -1977,10 +1984,10 @@ public class DepartmentPersistenceImpl
 		return count.intValue();
 	}
 
-	private static final String _FINDER_COLUMN_NAME_NAME_2 =
+	private static final String _FINDER_COLUMN_DEPARTMENTNAME_NAME_2 =
 		"department.name = ?";
 
-	private static final String _FINDER_COLUMN_NAME_NAME_3 =
+	private static final String _FINDER_COLUMN_DEPARTMENTNAME_NAME_3 =
 		"(department.name IS NULL OR department.name = '')";
 
 	public DepartmentPersistenceImpl() {
@@ -2607,20 +2614,20 @@ public class DepartmentPersistenceImpl
 			new String[] {String.class.getName(), Long.class.getName()},
 			new String[] {"uuid_", "companyId"}, false);
 
-		_finderPathWithPaginationFindByname = new FinderPath(
-			FINDER_CLASS_NAME_LIST_WITH_PAGINATION, "findByname",
+		_finderPathWithPaginationFindBydepartmentName = new FinderPath(
+			FINDER_CLASS_NAME_LIST_WITH_PAGINATION, "findBydepartmentName",
 			new String[] {
 				String.class.getName(), Integer.class.getName(),
 				Integer.class.getName(), OrderByComparator.class.getName()
 			},
 			new String[] {"name"}, true);
 
-		_finderPathWithoutPaginationFindByname = new FinderPath(
-			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "findByname",
+		_finderPathWithoutPaginationFindBydepartmentName = new FinderPath(
+			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "findBydepartmentName",
 			new String[] {String.class.getName()}, new String[] {"name"}, true);
 
-		_finderPathCountByname = new FinderPath(
-			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "countByname",
+		_finderPathCountBydepartmentName = new FinderPath(
+			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "countBydepartmentName",
 			new String[] {String.class.getName()}, new String[] {"name"},
 			false);
 

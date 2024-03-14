@@ -46,6 +46,10 @@ public class DeleteEmployeeMVCAction extends BaseMVCActionCommand {
                 themeDisplay.getUserId(), themeDisplay);
 
         log.info("Emplyee deleted successfully with logs");
+        // actionResponse.sendRedirect(AixtorEmployeeLogsPortletKeys.AIXTOR_EMPLOYEE_LOGS,
+        // portletName);
+
+        // include("/employeeView.jsp",actionRequest,actionResponse);
 
         actionResponse.sendRedirect("http://localhost:8080/axlts_backend");
 

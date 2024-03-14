@@ -393,7 +393,7 @@ public interface BranchPersistence extends BasePersistence<Branch> {
 	 * @param name the name
 	 * @return the matching branches
 	 */
-	public java.util.List<Branch> findByname(String name);
+	public java.util.List<Branch> findBybranchName(String name);
 
 	/**
 	 * Returns a range of all the branches where name = &#63;.
@@ -407,7 +407,8 @@ public interface BranchPersistence extends BasePersistence<Branch> {
 	 * @param end the upper bound of the range of branches (not inclusive)
 	 * @return the range of matching branches
 	 */
-	public java.util.List<Branch> findByname(String name, int start, int end);
+	public java.util.List<Branch> findBybranchName(
+		String name, int start, int end);
 
 	/**
 	 * Returns an ordered range of all the branches where name = &#63;.
@@ -422,7 +423,7 @@ public interface BranchPersistence extends BasePersistence<Branch> {
 	 * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
 	 * @return the ordered range of matching branches
 	 */
-	public java.util.List<Branch> findByname(
+	public java.util.List<Branch> findBybranchName(
 		String name, int start, int end,
 		com.liferay.portal.kernel.util.OrderByComparator<Branch>
 			orderByComparator);
@@ -441,7 +442,7 @@ public interface BranchPersistence extends BasePersistence<Branch> {
 	 * @param useFinderCache whether to use the finder cache
 	 * @return the ordered range of matching branches
 	 */
-	public java.util.List<Branch> findByname(
+	public java.util.List<Branch> findBybranchName(
 		String name, int start, int end,
 		com.liferay.portal.kernel.util.OrderByComparator<Branch>
 			orderByComparator,
@@ -455,7 +456,7 @@ public interface BranchPersistence extends BasePersistence<Branch> {
 	 * @return the first matching branch
 	 * @throws NoSuchBranchException if a matching branch could not be found
 	 */
-	public Branch findByname_First(
+	public Branch findBybranchName_First(
 			String name,
 			com.liferay.portal.kernel.util.OrderByComparator<Branch>
 				orderByComparator)
@@ -468,7 +469,7 @@ public interface BranchPersistence extends BasePersistence<Branch> {
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the first matching branch, or <code>null</code> if a matching branch could not be found
 	 */
-	public Branch fetchByname_First(
+	public Branch fetchBybranchName_First(
 		String name,
 		com.liferay.portal.kernel.util.OrderByComparator<Branch>
 			orderByComparator);
@@ -481,7 +482,7 @@ public interface BranchPersistence extends BasePersistence<Branch> {
 	 * @return the last matching branch
 	 * @throws NoSuchBranchException if a matching branch could not be found
 	 */
-	public Branch findByname_Last(
+	public Branch findBybranchName_Last(
 			String name,
 			com.liferay.portal.kernel.util.OrderByComparator<Branch>
 				orderByComparator)
@@ -494,7 +495,7 @@ public interface BranchPersistence extends BasePersistence<Branch> {
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the last matching branch, or <code>null</code> if a matching branch could not be found
 	 */
-	public Branch fetchByname_Last(
+	public Branch fetchBybranchName_Last(
 		String name,
 		com.liferay.portal.kernel.util.OrderByComparator<Branch>
 			orderByComparator);
@@ -508,7 +509,7 @@ public interface BranchPersistence extends BasePersistence<Branch> {
 	 * @return the previous, current, and next branch
 	 * @throws NoSuchBranchException if a branch with the primary key could not be found
 	 */
-	public Branch[] findByname_PrevAndNext(
+	public Branch[] findBybranchName_PrevAndNext(
 			long branchId, String name,
 			com.liferay.portal.kernel.util.OrderByComparator<Branch>
 				orderByComparator)
@@ -519,7 +520,7 @@ public interface BranchPersistence extends BasePersistence<Branch> {
 	 *
 	 * @param name the name
 	 */
-	public void removeByname(String name);
+	public void removeBybranchName(String name);
 
 	/**
 	 * Returns the number of branches where name = &#63;.
@@ -527,7 +528,7 @@ public interface BranchPersistence extends BasePersistence<Branch> {
 	 * @param name the name
 	 * @return the number of matching branches
 	 */
-	public int countByname(String name);
+	public int countBybranchName(String name);
 
 	/**
 	 * Caches the branch in the entity cache if it is enabled.

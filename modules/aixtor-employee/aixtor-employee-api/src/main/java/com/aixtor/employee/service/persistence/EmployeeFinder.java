@@ -24,6 +24,15 @@ import org.osgi.annotation.versioning.ProviderType;
 public interface EmployeeFinder {
 
 	public java.util.List<com.aixtor.employee.model.EmployeeCustom>
-		searchInEmployees(String searchName);
+		searchInEmployees(String keyWord);
+
+	public java.util.List<com.aixtor.employee.model.EmployeeCustom>
+		searchInEmployeesByBranchName(String branchName);
+
+	public java.util.List<com.aixtor.employee.model.EmployeeCustom>
+		searchInEmployeesByDepartmentName(String departmentName);
+
+	public java.util.List<com.aixtor.employee.model.BranchCustom>
+		CustomBranchByName(String branchName);
 
 }

@@ -80,6 +80,12 @@ public class EmployeeLocalServiceUtil {
 		return getService().createPersistedModel(primaryKeyObj);
 	}
 
+	public static List<com.aixtor.employee.model.BranchCustom>
+		CustomBranchByName(String branchName) {
+
+		return getService().CustomBranchByName(branchName);
+	}
+
 	/**
 	 * Deletes the employee from the database. Also notifies the appropriate model listeners.
 	 *
@@ -347,6 +353,18 @@ public class EmployeeLocalServiceUtil {
 		searchInEmployees(String searchName) {
 
 		return getService().searchInEmployees(searchName);
+	}
+
+	public static List<com.aixtor.employee.model.EmployeeCustom>
+		searchInEmployeesByBranchName(String branchName) {
+
+		return getService().searchInEmployeesByBranchName(branchName);
+	}
+
+	public static List<com.aixtor.employee.model.EmployeeCustom>
+		searchInEmployeesByDepartmentName(String departmentName) {
+
+		return getService().searchInEmployeesByDepartmentName(departmentName);
 	}
 
 	/**

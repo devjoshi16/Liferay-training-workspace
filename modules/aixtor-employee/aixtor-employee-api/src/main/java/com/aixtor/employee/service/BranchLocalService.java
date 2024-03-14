@@ -212,6 +212,8 @@ public interface BranchLocalService
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public Branch fetchBranchByUuidAndGroupId(String uuid, long groupId);
 
+	public List<Branch> findBybranchName(String name);
+
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public ActionableDynamicQuery getActionableDynamicQuery();
 

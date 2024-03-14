@@ -1,0 +1,8 @@
+dependencies {
+	compileOnly group: "com.liferay.portal", name: "release.dxp.api"
+	compile project(":modules:aixtor-employee:aixtor-employee-api")
+	compile project(":modules:aixtor-employee-headless:aixtor-employee-headless-api")
+
+
+	cssBuilder group: "com.liferay", name: "com.liferay.css.builder", version: "3.1.4"
+}

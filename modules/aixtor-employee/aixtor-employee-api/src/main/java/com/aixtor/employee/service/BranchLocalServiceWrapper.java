@@ -240,6 +240,13 @@ public class BranchLocalServiceWrapper
 	}
 
 	@Override
+	public java.util.List<com.aixtor.employee.model.Branch> findBybranchName(
+		String name) {
+
+		return _branchLocalService.findBybranchName(name);
+	}
+
+	@Override
 	public com.liferay.portal.kernel.dao.orm.ActionableDynamicQuery
 		getActionableDynamicQuery() {
 

@@ -14,11 +14,14 @@
 
 package com.aixtor.employee.service.impl;
 
+import com.aixtor.employee.model.Department;
 import com.aixtor.employee.service.base.DepartmentLocalServiceBaseImpl;
 
 import com.liferay.portal.aop.AopService;
 
 import org.osgi.service.component.annotations.Component;
+
+import java.util.List;
 
 /**
  * @author Brian Wing Shun Chan
@@ -28,4 +31,7 @@ import org.osgi.service.component.annotations.Component;
 	service = AopService.class
 )
 public class DepartmentLocalServiceImpl extends DepartmentLocalServiceBaseImpl {
+	public List<Department> findBydepartmentName(String name) {
+		return departmentPersistence.findBydepartmentName(name);
+	}
 }

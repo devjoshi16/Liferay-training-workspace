@@ -535,8 +535,8 @@ public class DepartmentUtil {
 	 * @param name the name
 	 * @return the matching departments
 	 */
-	public static List<Department> findByname(String name) {
-		return getPersistence().findByname(name);
+	public static List<Department> findBydepartmentName(String name) {
+		return getPersistence().findBydepartmentName(name);
 	}
 
 	/**
@@ -551,8 +551,10 @@ public class DepartmentUtil {
 	 * @param end the upper bound of the range of departments (not inclusive)
 	 * @return the range of matching departments
 	 */
-	public static List<Department> findByname(String name, int start, int end) {
-		return getPersistence().findByname(name, start, end);
+	public static List<Department> findBydepartmentName(
+		String name, int start, int end) {
+
+		return getPersistence().findBydepartmentName(name, start, end);
 	}
 
 	/**
@@ -568,11 +570,12 @@ public class DepartmentUtil {
 	 * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
 	 * @return the ordered range of matching departments
 	 */
-	public static List<Department> findByname(
+	public static List<Department> findBydepartmentName(
 		String name, int start, int end,
 		OrderByComparator<Department> orderByComparator) {
 
-		return getPersistence().findByname(name, start, end, orderByComparator);
+		return getPersistence().findBydepartmentName(
+			name, start, end, orderByComparator);
 	}
 
 	/**
@@ -589,12 +592,12 @@ public class DepartmentUtil {
 	 * @param useFinderCache whether to use the finder cache
 	 * @return the ordered range of matching departments
 	 */
-	public static List<Department> findByname(
+	public static List<Department> findBydepartmentName(
 		String name, int start, int end,
 		OrderByComparator<Department> orderByComparator,
 		boolean useFinderCache) {
 
-		return getPersistence().findByname(
+		return getPersistence().findBydepartmentName(
 			name, start, end, orderByComparator, useFinderCache);
 	}
 
@@ -606,11 +609,12 @@ public class DepartmentUtil {
 	 * @return the first matching department
 	 * @throws NoSuchDepartmentException if a matching department could not be found
 	 */
-	public static Department findByname_First(
+	public static Department findBydepartmentName_First(
 			String name, OrderByComparator<Department> orderByComparator)
 		throws com.aixtor.employee.exception.NoSuchDepartmentException {
 
-		return getPersistence().findByname_First(name, orderByComparator);
+		return getPersistence().findBydepartmentName_First(
+			name, orderByComparator);
 	}
 
 	/**
@@ -620,10 +624,11 @@ public class DepartmentUtil {
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the first matching department, or <code>null</code> if a matching department could not be found
 	 */
-	public static Department fetchByname_First(
+	public static Department fetchBydepartmentName_First(
 		String name, OrderByComparator<Department> orderByComparator) {
 
-		return getPersistence().fetchByname_First(name, orderByComparator);
+		return getPersistence().fetchBydepartmentName_First(
+			name, orderByComparator);
 	}
 
 	/**
@@ -634,11 +639,12 @@ public class DepartmentUtil {
 	 * @return the last matching department
 	 * @throws NoSuchDepartmentException if a matching department could not be found
 	 */
-	public static Department findByname_Last(
+	public static Department findBydepartmentName_Last(
 			String name, OrderByComparator<Department> orderByComparator)
 		throws com.aixtor.employee.exception.NoSuchDepartmentException {
 
-		return getPersistence().findByname_Last(name, orderByComparator);
+		return getPersistence().findBydepartmentName_Last(
+			name, orderByComparator);
 	}
 
 	/**
@@ -648,10 +654,11 @@ public class DepartmentUtil {
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the last matching department, or <code>null</code> if a matching department could not be found
 	 */
-	public static Department fetchByname_Last(
+	public static Department fetchBydepartmentName_Last(
 		String name, OrderByComparator<Department> orderByComparator) {
 
-		return getPersistence().fetchByname_Last(name, orderByComparator);
+		return getPersistence().fetchBydepartmentName_Last(
+			name, orderByComparator);
 	}
 
 	/**
@@ -663,12 +670,12 @@ public class DepartmentUtil {
 	 * @return the previous, current, and next department
 	 * @throws NoSuchDepartmentException if a department with the primary key could not be found
 	 */
-	public static Department[] findByname_PrevAndNext(
+	public static Department[] findBydepartmentName_PrevAndNext(
 			long departmentId, String name,
 			OrderByComparator<Department> orderByComparator)
 		throws com.aixtor.employee.exception.NoSuchDepartmentException {
 
-		return getPersistence().findByname_PrevAndNext(
+		return getPersistence().findBydepartmentName_PrevAndNext(
 			departmentId, name, orderByComparator);
 	}
 
@@ -677,8 +684,8 @@ public class DepartmentUtil {
 	 *
 	 * @param name the name
 	 */
-	public static void removeByname(String name) {
-		getPersistence().removeByname(name);
+	public static void removeBydepartmentName(String name) {
+		getPersistence().removeBydepartmentName(name);
 	}
 
 	/**
@@ -687,8 +694,8 @@ public class DepartmentUtil {
 	 * @param name the name
 	 * @return the number of matching departments
 	 */
-	public static int countByname(String name) {
-		return getPersistence().countByname(name);
+	public static int countBydepartmentName(String name) {
+		return getPersistence().countBydepartmentName(name);
 	}
 
 	/**

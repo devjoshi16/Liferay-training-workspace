@@ -249,6 +249,13 @@ public class DepartmentLocalServiceWrapper
 	}
 
 	@Override
+	public java.util.List<com.aixtor.employee.model.Department>
+		findBydepartmentName(String name) {
+
+		return _departmentLocalService.findBydepartmentName(name);
+	}
+
+	@Override
 	public com.liferay.portal.kernel.dao.orm.ActionableDynamicQuery
 		getActionableDynamicQuery() {
 

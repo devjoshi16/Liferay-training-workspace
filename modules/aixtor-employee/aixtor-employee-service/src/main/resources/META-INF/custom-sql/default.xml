@@ -34,4 +34,74 @@ WHERE
 	
         ]]>
     </sql>
+
+
+    <sql id="customSqlQueryWhereDepartmentId">
+        <![CDATA[
+SELECT
+    employee_employee.employeeId AS employeeId,
+    employee_employee.firstName AS firstName,
+    employee_employee.lastName AS lastName,
+    employee_employee.email AS email,
+    employee_employee.mobileNumber AS mobileNumber,
+    employee_employee.address AS address,
+    employee_department.name AS departmentName,
+    employee_designation.name AS designationName,
+    employee_branch.name AS branchName,
+    employee_employee.departmentId AS departmentId,
+    employee_employee.designationId AS designationId,
+    employee_employee.branchId AS branchId
+
+FROM employee_employee
+LEFT JOIN employee_department ON employee_employee.departmentId = employee_department.departmentId
+LEFT JOIN employee_designation ON employee_employee.designationId = employee_designation.designationId
+LEFT JOIN employee_branch ON employee_employee.branchId = employee_branch.branchId
+WHERE
+    employee_department.name Like ?
+
+
+        ]]>
+    </sql>
+
+
+    <sql id="customSqlQueryWhereBranchId">
+        <![CDATA[
+SELECT
+    employee_employee.employeeId AS employeeId,
+    employee_employee.firstName AS firstName,
+    employee_employee.lastName AS lastName,
+    employee_employee.email AS email,
+    employee_employee.mobileNumber AS mobileNumber,
+    employee_employee.address AS address,
+    employee_department.name AS departmentName,
+    employee_designation.name AS designationName,
+    employee_branch.name AS branchName,
+    employee_employee.departmentId AS departmentId,
+    employee_employee.designationId AS designationId,
+    employee_employee.branchId AS branchId
+
+FROM employee_employee
+LEFT JOIN employee_department ON employee_employee.departmentId = employee_department.departmentId
+LEFT JOIN employee_designation ON employee_employee.designationId = employee_designation.designationId
+LEFT JOIN employee_branch ON employee_employee.branchId = employee_branch.branchId
+WHERE
+    employee_branch.name Like ?
+
+
+        ]]>
+    </sql>
+
+    <sql id="CustomBranchSqlQuery">
+        <![CDATA[
+        SELECT
+            employee_branch.branchId,employee_branch.name as branchName,employee_city.cityName,
+            employee_state.stateName,country.name as countryName
+        from employee_branch
+            LEFT JOIN employee_city  ON employee_city.cityId = employee_branch.cityId
+            LEFT JOIN employee_state ON employee_state.stateId = employee_branch.stateId
+            LEFT JOIN country ON country.countryId = employee_branch.countryId
+        WHERE
+            employee_branch.name like ?
+        ]]>
+    </sql>
 </custom-sql>

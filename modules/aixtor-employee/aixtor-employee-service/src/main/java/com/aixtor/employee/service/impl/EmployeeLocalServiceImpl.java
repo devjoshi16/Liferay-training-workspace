@@ -14,6 +14,8 @@
 
 package com.aixtor.employee.service.impl;
 
+import com.aixtor.employee.model.BranchCustom;
+import com.aixtor.employee.model.Employee;
 import com.aixtor.employee.model.EmployeeCustom;
 import com.aixtor.employee.service.base.EmployeeLocalServiceBaseImpl;
 import com.liferay.portal.aop.AopService;
@@ -33,4 +35,13 @@ public class EmployeeLocalServiceImpl extends EmployeeLocalServiceBaseImpl {
 	public List<EmployeeCustom>  searchInEmployees(String searchName){
 	return employeeFinder.searchInEmployees(searchName);
 	}
-}
+	public List<BranchCustom> CustomBranchByName(String branchName) {
+		return employeeFinder.CustomBranchByName(branchName);
+	}
+	public List<EmployeeCustom> searchInEmployeesByBranchName(String branchName) {
+		return  employeeFinder.searchInEmployeesByBranchName(branchName);
+	}
+	public List<EmployeeCustom> searchInEmployeesByDepartmentName(String departmentName) {
+		return employeeFinder.searchInEmployeesByDepartmentName(departmentName);
+	}
+	}

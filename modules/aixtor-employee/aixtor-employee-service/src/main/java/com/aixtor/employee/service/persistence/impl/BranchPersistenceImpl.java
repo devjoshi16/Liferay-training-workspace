@@ -1449,9 +1449,9 @@ public class BranchPersistenceImpl
 	private static final String _FINDER_COLUMN_UUID_C_COMPANYID_2 =
 		"branch.companyId = ?";
 
-	private FinderPath _finderPathWithPaginationFindByname;
-	private FinderPath _finderPathWithoutPaginationFindByname;
-	private FinderPath _finderPathCountByname;
+	private FinderPath _finderPathWithPaginationFindBybranchName;
+	private FinderPath _finderPathWithoutPaginationFindBybranchName;
+	private FinderPath _finderPathCountBybranchName;
 
 	/**
 	 * Returns all the branches where name = &#63;.
@@ -1460,8 +1460,9 @@ public class BranchPersistenceImpl
 	 * @return the matching branches
 	 */
 	@Override
-	public List<Branch> findByname(String name) {
-		return findByname(name, QueryUtil.ALL_POS, QueryUtil.ALL_POS, null);
+	public List<Branch> findBybranchName(String name) {
+		return findBybranchName(
+			name, QueryUtil.ALL_POS, QueryUtil.ALL_POS, null);
 	}
 
 	/**
@@ -1477,8 +1478,8 @@ public class BranchPersistenceImpl
 	 * @return the range of matching branches
 	 */
 	@Override
-	public List<Branch> findByname(String name, int start, int end) {
-		return findByname(name, start, end, null);
+	public List<Branch> findBybranchName(String name, int start, int end) {
+		return findBybranchName(name, start, end, null);
 	}
 
 	/**
@@ -1495,11 +1496,11 @@ public class BranchPersistenceImpl
 	 * @return the ordered range of matching branches
 	 */
 	@Override
-	public List<Branch> findByname(
+	public List<Branch> findBybranchName(
 		String name, int start, int end,
 		OrderByComparator<Branch> orderByComparator) {
 
-		return findByname(name, start, end, orderByComparator, true);
+		return findBybranchName(name, start, end, orderByComparator, true);
 	}
 
 	/**
@@ -1517,7 +1518,7 @@ public class BranchPersistenceImpl
 	 * @return the ordered range of matching branches
 	 */
 	@Override
-	public List<Branch> findByname(
+	public List<Branch> findBybranchName(
 		String name, int start, int end,
 		OrderByComparator<Branch> orderByComparator, boolean useFinderCache) {
 
@@ -1530,12 +1531,12 @@ public class BranchPersistenceImpl
 			(orderByComparator == null)) {
 
 			if (useFinderCache) {
-				finderPath = _finderPathWithoutPaginationFindByname;
+				finderPath = _finderPathWithoutPaginationFindBybranchName;
 				finderArgs = new Object[] {name};
 			}
 		}
 		else if (useFinderCache) {
-			finderPath = _finderPathWithPaginationFindByname;
+			finderPath = _finderPathWithPaginationFindBybranchName;
 			finderArgs = new Object[] {name, start, end, orderByComparator};
 		}
 
@@ -1572,12 +1573,12 @@ public class BranchPersistenceImpl
 			boolean bindName = false;
 
 			if (name.isEmpty()) {
-				sb.append(_FINDER_COLUMN_NAME_NAME_3);
+				sb.append(_FINDER_COLUMN_BRANCHNAME_NAME_3);
 			}
 			else {
 				bindName = true;
 
-				sb.append(_FINDER_COLUMN_NAME_NAME_2);
+				sb.append(_FINDER_COLUMN_BRANCHNAME_NAME_2);
 			}
 
 			if (orderByComparator != null) {
@@ -1632,11 +1633,11 @@ public class BranchPersistenceImpl
 	 * @throws NoSuchBranchException if a matching branch could not be found
 	 */
 	@Override
-	public Branch findByname_First(
+	public Branch findBybranchName_First(
 			String name, OrderByComparator<Branch> orderByComparator)
 		throws NoSuchBranchException {
 
-		Branch branch = fetchByname_First(name, orderByComparator);
+		Branch branch = fetchBybranchName_First(name, orderByComparator);
 
 		if (branch != null) {
 			return branch;
@@ -1662,10 +1663,10 @@ public class BranchPersistenceImpl
 	 * @return the first matching branch, or <code>null</code> if a matching branch could not be found
 	 */
 	@Override
-	public Branch fetchByname_First(
+	public Branch fetchBybranchName_First(
 		String name, OrderByComparator<Branch> orderByComparator) {
 
-		List<Branch> list = findByname(name, 0, 1, orderByComparator);
+		List<Branch> list = findBybranchName(name, 0, 1, orderByComparator);
 
 		if (!list.isEmpty()) {
 			return list.get(0);
@@ -1683,11 +1684,11 @@ public class BranchPersistenceImpl
 	 * @throws NoSuchBranchException if a matching branch could not be found
 	 */
 	@Override
-	public Branch findByname_Last(
+	public Branch findBybranchName_Last(
 			String name, OrderByComparator<Branch> orderByComparator)
 		throws NoSuchBranchException {
 
-		Branch branch = fetchByname_Last(name, orderByComparator);
+		Branch branch = fetchBybranchName_Last(name, orderByComparator);
 
 		if (branch != null) {
 			return branch;
@@ -1713,16 +1714,16 @@ public class BranchPersistenceImpl
 	 * @return the last matching branch, or <code>null</code> if a matching branch could not be found
 	 */
 	@Override
-	public Branch fetchByname_Last(
+	public Branch fetchBybranchName_Last(
 		String name, OrderByComparator<Branch> orderByComparator) {
 
-		int count = countByname(name);
+		int count = countBybranchName(name);
 
 		if (count == 0) {
 			return null;
 		}
 
-		List<Branch> list = findByname(
+		List<Branch> list = findBybranchName(
 			name, count - 1, count, orderByComparator);
 
 		if (!list.isEmpty()) {
@@ -1742,7 +1743,7 @@ public class BranchPersistenceImpl
 	 * @throws NoSuchBranchException if a branch with the primary key could not be found
 	 */
 	@Override
-	public Branch[] findByname_PrevAndNext(
+	public Branch[] findBybranchName_PrevAndNext(
 			long branchId, String name,
 			OrderByComparator<Branch> orderByComparator)
 		throws NoSuchBranchException {
@@ -1758,12 +1759,12 @@ public class BranchPersistenceImpl
 
 			Branch[] array = new BranchImpl[3];
 
-			array[0] = getByname_PrevAndNext(
+			array[0] = getBybranchName_PrevAndNext(
 				session, branch, name, orderByComparator, true);
 
 			array[1] = branch;
 
-			array[2] = getByname_PrevAndNext(
+			array[2] = getBybranchName_PrevAndNext(
 				session, branch, name, orderByComparator, false);
 
 			return array;
@@ -1776,7 +1777,7 @@ public class BranchPersistenceImpl
 		}
 	}
 
-	protected Branch getByname_PrevAndNext(
+	protected Branch getBybranchName_PrevAndNext(
 		Session session, Branch branch, String name,
 		OrderByComparator<Branch> orderByComparator, boolean previous) {
 
@@ -1796,12 +1797,12 @@ public class BranchPersistenceImpl
 		boolean bindName = false;
 
 		if (name.isEmpty()) {
-			sb.append(_FINDER_COLUMN_NAME_NAME_3);
+			sb.append(_FINDER_COLUMN_BRANCHNAME_NAME_3);
 		}
 		else {
 			bindName = true;
 
-			sb.append(_FINDER_COLUMN_NAME_NAME_2);
+			sb.append(_FINDER_COLUMN_BRANCHNAME_NAME_2);
 		}
 
 		if (orderByComparator != null) {
@@ -1901,9 +1902,10 @@ public class BranchPersistenceImpl
 	 * @param name the name
 	 */
 	@Override
-	public void removeByname(String name) {
+	public void removeBybranchName(String name) {
 		for (Branch branch :
-				findByname(name, QueryUtil.ALL_POS, QueryUtil.ALL_POS, null)) {
+				findBybranchName(
+					name, QueryUtil.ALL_POS, QueryUtil.ALL_POS, null)) {
 
 			remove(branch);
 		}
@@ -1916,10 +1918,10 @@ public class BranchPersistenceImpl
 	 * @return the number of matching branches
 	 */
 	@Override
-	public int countByname(String name) {
+	public int countBybranchName(String name) {
 		name = Objects.toString(name, "");
 
-		FinderPath finderPath = _finderPathCountByname;
+		FinderPath finderPath = _finderPathCountBybranchName;
 
 		Object[] finderArgs = new Object[] {name};
 
@@ -1933,12 +1935,12 @@ public class BranchPersistenceImpl
 			boolean bindName = false;
 
 			if (name.isEmpty()) {
-				sb.append(_FINDER_COLUMN_NAME_NAME_3);
+				sb.append(_FINDER_COLUMN_BRANCHNAME_NAME_3);
 			}
 			else {
 				bindName = true;
 
-				sb.append(_FINDER_COLUMN_NAME_NAME_2);
+				sb.append(_FINDER_COLUMN_BRANCHNAME_NAME_2);
 			}
 
 			String sql = sb.toString();
@@ -1971,9 +1973,10 @@ public class BranchPersistenceImpl
 		return count.intValue();
 	}
 
-	private static final String _FINDER_COLUMN_NAME_NAME_2 = "branch.name = ?";
+	private static final String _FINDER_COLUMN_BRANCHNAME_NAME_2 =
+		"branch.name = ?";
 
-	private static final String _FINDER_COLUMN_NAME_NAME_3 =
+	private static final String _FINDER_COLUMN_BRANCHNAME_NAME_3 =
 		"(branch.name IS NULL OR branch.name = '')";
 
 	public BranchPersistenceImpl() {
@@ -2585,20 +2588,20 @@ public class BranchPersistenceImpl
 			new String[] {String.class.getName(), Long.class.getName()},
 			new String[] {"uuid_", "companyId"}, false);
 
-		_finderPathWithPaginationFindByname = new FinderPath(
-			FINDER_CLASS_NAME_LIST_WITH_PAGINATION, "findByname",
+		_finderPathWithPaginationFindBybranchName = new FinderPath(
+			FINDER_CLASS_NAME_LIST_WITH_PAGINATION, "findBybranchName",
 			new String[] {
 				String.class.getName(), Integer.class.getName(),
 				Integer.class.getName(), OrderByComparator.class.getName()
 			},
 			new String[] {"name"}, true);
 
-		_finderPathWithoutPaginationFindByname = new FinderPath(
-			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "findByname",
+		_finderPathWithoutPaginationFindBybranchName = new FinderPath(
+			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "findBybranchName",
 			new String[] {String.class.getName()}, new String[] {"name"}, true);
 
-		_finderPathCountByname = new FinderPath(
-			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "countByname",
+		_finderPathCountBybranchName = new FinderPath(
+			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "countBybranchName",
 			new String[] {String.class.getName()}, new String[] {"name"},
 			false);
 

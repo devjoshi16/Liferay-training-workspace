@@ -1,0 +1,3 @@
+Bundle-Name: aixtor-employee-headless-impl
+Bundle-SymbolicName: com.aixtor.employee.headless.impl
+Bundle-Version: 1.0.0

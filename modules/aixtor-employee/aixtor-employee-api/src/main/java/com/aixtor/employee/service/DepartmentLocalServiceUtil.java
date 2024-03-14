@@ -223,6 +223,10 @@ public class DepartmentLocalServiceUtil {
 		return getService().fetchDepartmentByUuidAndGroupId(uuid, groupId);
 	}
 
+	public static List<Department> findBydepartmentName(String name) {
+		return getService().findBydepartmentName(name);
+	}
+
 	public static com.liferay.portal.kernel.dao.orm.ActionableDynamicQuery
 		getActionableDynamicQuery() {
 

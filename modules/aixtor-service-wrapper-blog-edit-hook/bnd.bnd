@@ -1,0 +1,3 @@
+Bundle-Name: aixtor-service-wrapper-blog-edit-hook
+Bundle-SymbolicName: com.aixtor.service.wrapper.blog.edit
+Bundle-Version: 1.0.0

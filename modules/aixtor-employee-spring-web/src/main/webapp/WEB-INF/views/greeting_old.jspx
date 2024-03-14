@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jsp:root
+        xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+        xmlns:jsp="http://java.sun.com/JSP/Page"
+        xmlns:portlet="http://xmlns.jcp.org/portlet_3_0"
+        xmlns:spring="http://www.springframework.org/tags"
+        version="2.1"
+>
+    <jsp:include page="init.jsp"/>
+    <spring:url value="http://liferay.com/tld/aui"/>
+    <jsp:include page="init.jsp"/>
+    <jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
+    <portlet:defineObjects/>
+    <portlet:actionURL var="mainFormActionURL"/>
+
+    <!--	<p class="user-greeting">-->
+    <!--		<spring:message arguments="${fn:escapeXml(user.firstName)},${fn:escapeXml(user.lastName)}" code="greetings" />-->
+    <!--	</p>-->
+    <!--	<p>-->
+    <!--		<spring:message arguments="${todaysDate}" argumentSeparator=";" code="todays-date-is" />-->
+    <!--	</p>-->
+    <p>
+        Old Jspx Content
+    </p>
+    <p>Employee Form</p>
+    <a class="btn btn-primary" href="${mainFormActionURL}">Search Container</a>
+</jsp:root>

@@ -14,11 +14,15 @@
 
 package com.aixtor.employee.service.impl;
 
+import com.aixtor.employee.model.Branch;
+import com.aixtor.employee.model.Employee;
 import com.aixtor.employee.service.base.BranchLocalServiceBaseImpl;
 
 import com.liferay.portal.aop.AopService;
 
 import org.osgi.service.component.annotations.Component;
+
+import java.util.List;
 
 /**
  * @author Brian Wing Shun Chan
@@ -28,4 +32,8 @@ import org.osgi.service.component.annotations.Component;
 	service = AopService.class
 )
 public class BranchLocalServiceImpl extends BranchLocalServiceBaseImpl {
+	public List<Branch> findBybranchName(String name)
+	{
+		return branchPersistence.findBybranchName(name);
+	}
 }

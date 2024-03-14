@@ -1,0 +1,4 @@
+Bundle-Name: aixtor-employee-explore-web
+Bundle-SymbolicName: com.aixtor.employee.explore
+Bundle-Version: 1.0.0
+Export-Package: com.aixtor.employee.explore.constants

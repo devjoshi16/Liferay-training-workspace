@@ -221,6 +221,10 @@ public class BranchLocalServiceUtil {
 		return getService().fetchBranchByUuidAndGroupId(uuid, groupId);
 	}
 
+	public static List<Branch> findBybranchName(String name) {
+		return getService().findBybranchName(name);
+	}
+
 	public static com.liferay.portal.kernel.dao.orm.ActionableDynamicQuery
 		getActionableDynamicQuery() {
 

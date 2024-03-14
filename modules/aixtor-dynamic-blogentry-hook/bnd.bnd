@@ -1,0 +1,4 @@
+Bundle-Name: aixtor-dynamic-blogentry-hook
+Bundle-SymbolicName: aixtor.dynamic.blogentry.hook
+Bundle-Version: 1.0.0
+Export-Package: aixtor.dynamic.blogentry.hook.constants

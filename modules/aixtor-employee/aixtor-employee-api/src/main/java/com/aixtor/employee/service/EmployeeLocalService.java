@@ -14,6 +14,7 @@
 
 package com.aixtor.employee.service;
 
+import com.aixtor.employee.model.BranchCustom;
 import com.aixtor.employee.model.Employee;
 import com.aixtor.employee.model.EmployeeCustom;
 
@@ -93,6 +94,8 @@ public interface EmployeeLocalService
 	 */
 	public PersistedModel createPersistedModel(Serializable primaryKeyObj)
 		throws PortalException;
+
+	public List<BranchCustom> CustomBranchByName(String branchName);
 
 	/**
 	 * Deletes the employee from the database. Also notifies the appropriate model listeners.
@@ -310,6 +313,14 @@ public interface EmployeeLocalService
 
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public List<EmployeeCustom> searchInEmployees(String searchName);
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public List<EmployeeCustom> searchInEmployeesByBranchName(
+		String branchName);
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public List<EmployeeCustom> searchInEmployeesByDepartmentName(
+		String departmentName);
 
 	/**
 	 * Updates the employee in the database or adds it if it does not yet exist. Also notifies the appropriate model listeners.

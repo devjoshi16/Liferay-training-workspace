@@ -394,7 +394,7 @@ public interface DepartmentPersistence extends BasePersistence<Department> {
 	 * @param name the name
 	 * @return the matching departments
 	 */
-	public java.util.List<Department> findByname(String name);
+	public java.util.List<Department> findBydepartmentName(String name);
 
 	/**
 	 * Returns a range of all the departments where name = &#63;.
@@ -408,7 +408,7 @@ public interface DepartmentPersistence extends BasePersistence<Department> {
 	 * @param end the upper bound of the range of departments (not inclusive)
 	 * @return the range of matching departments
 	 */
-	public java.util.List<Department> findByname(
+	public java.util.List<Department> findBydepartmentName(
 		String name, int start, int end);
 
 	/**
@@ -424,7 +424,7 @@ public interface DepartmentPersistence extends BasePersistence<Department> {
 	 * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
 	 * @return the ordered range of matching departments
 	 */
-	public java.util.List<Department> findByname(
+	public java.util.List<Department> findBydepartmentName(
 		String name, int start, int end,
 		com.liferay.portal.kernel.util.OrderByComparator<Department>
 			orderByComparator);
@@ -443,7 +443,7 @@ public interface DepartmentPersistence extends BasePersistence<Department> {
 	 * @param useFinderCache whether to use the finder cache
 	 * @return the ordered range of matching departments
 	 */
-	public java.util.List<Department> findByname(
+	public java.util.List<Department> findBydepartmentName(
 		String name, int start, int end,
 		com.liferay.portal.kernel.util.OrderByComparator<Department>
 			orderByComparator,
@@ -457,7 +457,7 @@ public interface DepartmentPersistence extends BasePersistence<Department> {
 	 * @return the first matching department
 	 * @throws NoSuchDepartmentException if a matching department could not be found
 	 */
-	public Department findByname_First(
+	public Department findBydepartmentName_First(
 			String name,
 			com.liferay.portal.kernel.util.OrderByComparator<Department>
 				orderByComparator)
@@ -470,7 +470,7 @@ public interface DepartmentPersistence extends BasePersistence<Department> {
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the first matching department, or <code>null</code> if a matching department could not be found
 	 */
-	public Department fetchByname_First(
+	public Department fetchBydepartmentName_First(
 		String name,
 		com.liferay.portal.kernel.util.OrderByComparator<Department>
 			orderByComparator);
@@ -483,7 +483,7 @@ public interface DepartmentPersistence extends BasePersistence<Department> {
 	 * @return the last matching department
 	 * @throws NoSuchDepartmentException if a matching department could not be found
 	 */
-	public Department findByname_Last(
+	public Department findBydepartmentName_Last(
 			String name,
 			com.liferay.portal.kernel.util.OrderByComparator<Department>
 				orderByComparator)
@@ -496,7 +496,7 @@ public interface DepartmentPersistence extends BasePersistence<Department> {
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the last matching department, or <code>null</code> if a matching department could not be found
 	 */
-	public Department fetchByname_Last(
+	public Department fetchBydepartmentName_Last(
 		String name,
 		com.liferay.portal.kernel.util.OrderByComparator<Department>
 			orderByComparator);
@@ -510,7 +510,7 @@ public interface DepartmentPersistence extends BasePersistence<Department> {
 	 * @return the previous, current, and next department
 	 * @throws NoSuchDepartmentException if a department with the primary key could not be found
 	 */
-	public Department[] findByname_PrevAndNext(
+	public Department[] findBydepartmentName_PrevAndNext(
 			long departmentId, String name,
 			com.liferay.portal.kernel.util.OrderByComparator<Department>
 				orderByComparator)
@@ -521,7 +521,7 @@ public interface DepartmentPersistence extends BasePersistence<Department> {
 	 *
 	 * @param name the name
 	 */
-	public void removeByname(String name);
+	public void removeBydepartmentName(String name);
 
 	/**
 	 * Returns the number of departments where name = &#63;.
@@ -529,7 +529,7 @@ public interface DepartmentPersistence extends BasePersistence<Department> {
 	 * @param name the name
 	 * @return the number of matching departments
 	 */
-	public int countByname(String name);
+	public int countBydepartmentName(String name);
 
 	/**
 	 * Caches the department in the entity cache if it is enabled.

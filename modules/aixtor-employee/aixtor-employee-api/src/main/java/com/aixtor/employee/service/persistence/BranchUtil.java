@@ -529,8 +529,8 @@ public class BranchUtil {
 	 * @param name the name
 	 * @return the matching branches
 	 */
-	public static List<Branch> findByname(String name) {
-		return getPersistence().findByname(name);
+	public static List<Branch> findBybranchName(String name) {
+		return getPersistence().findBybranchName(name);
 	}
 
 	/**
@@ -545,8 +545,10 @@ public class BranchUtil {
 	 * @param end the upper bound of the range of branches (not inclusive)
 	 * @return the range of matching branches
 	 */
-	public static List<Branch> findByname(String name, int start, int end) {
-		return getPersistence().findByname(name, start, end);
+	public static List<Branch> findBybranchName(
+		String name, int start, int end) {
+
+		return getPersistence().findBybranchName(name, start, end);
 	}
 
 	/**
@@ -562,11 +564,12 @@ public class BranchUtil {
 	 * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
 	 * @return the ordered range of matching branches
 	 */
-	public static List<Branch> findByname(
+	public static List<Branch> findBybranchName(
 		String name, int start, int end,
 		OrderByComparator<Branch> orderByComparator) {
 
-		return getPersistence().findByname(name, start, end, orderByComparator);
+		return getPersistence().findBybranchName(
+			name, start, end, orderByComparator);
 	}
 
 	/**
@@ -583,11 +586,11 @@ public class BranchUtil {
 	 * @param useFinderCache whether to use the finder cache
 	 * @return the ordered range of matching branches
 	 */
-	public static List<Branch> findByname(
+	public static List<Branch> findBybranchName(
 		String name, int start, int end,
 		OrderByComparator<Branch> orderByComparator, boolean useFinderCache) {
 
-		return getPersistence().findByname(
+		return getPersistence().findBybranchName(
 			name, start, end, orderByComparator, useFinderCache);
 	}
 
@@ -599,11 +602,11 @@ public class BranchUtil {
 	 * @return the first matching branch
 	 * @throws NoSuchBranchException if a matching branch could not be found
 	 */
-	public static Branch findByname_First(
+	public static Branch findBybranchName_First(
 			String name, OrderByComparator<Branch> orderByComparator)
 		throws com.aixtor.employee.exception.NoSuchBranchException {
 
-		return getPersistence().findByname_First(name, orderByComparator);
+		return getPersistence().findBybranchName_First(name, orderByComparator);
 	}
 
 	/**
@@ -613,10 +616,11 @@ public class BranchUtil {
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the first matching branch, or <code>null</code> if a matching branch could not be found
 	 */
-	public static Branch fetchByname_First(
+	public static Branch fetchBybranchName_First(
 		String name, OrderByComparator<Branch> orderByComparator) {
 
-		return getPersistence().fetchByname_First(name, orderByComparator);
+		return getPersistence().fetchBybranchName_First(
+			name, orderByComparator);
 	}
 
 	/**
@@ -627,11 +631,11 @@ public class BranchUtil {
 	 * @return the last matching branch
 	 * @throws NoSuchBranchException if a matching branch could not be found
 	 */
-	public static Branch findByname_Last(
+	public static Branch findBybranchName_Last(
 			String name, OrderByComparator<Branch> orderByComparator)
 		throws com.aixtor.employee.exception.NoSuchBranchException {
 
-		return getPersistence().findByname_Last(name, orderByComparator);
+		return getPersistence().findBybranchName_Last(name, orderByComparator);
 	}
 
 	/**
@@ -641,10 +645,10 @@ public class BranchUtil {
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the last matching branch, or <code>null</code> if a matching branch could not be found
 	 */
-	public static Branch fetchByname_Last(
+	public static Branch fetchBybranchName_Last(
 		String name, OrderByComparator<Branch> orderByComparator) {
 
-		return getPersistence().fetchByname_Last(name, orderByComparator);
+		return getPersistence().fetchBybranchName_Last(name, orderByComparator);
 	}
 
 	/**
@@ -656,12 +660,12 @@ public class BranchUtil {
 	 * @return the previous, current, and next branch
 	 * @throws NoSuchBranchException if a branch with the primary key could not be found
 	 */
-	public static Branch[] findByname_PrevAndNext(
+	public static Branch[] findBybranchName_PrevAndNext(
 			long branchId, String name,
 			OrderByComparator<Branch> orderByComparator)
 		throws com.aixtor.employee.exception.NoSuchBranchException {
 
-		return getPersistence().findByname_PrevAndNext(
+		return getPersistence().findBybranchName_PrevAndNext(
 			branchId, name, orderByComparator);
 	}
 
@@ -670,8 +674,8 @@ public class BranchUtil {
 	 *
 	 * @param name the name
 	 */
-	public static void removeByname(String name) {
-		getPersistence().removeByname(name);
+	public static void removeBybranchName(String name) {
+		getPersistence().removeBybranchName(name);
 	}
 
 	/**
@@ -680,8 +684,8 @@ public class BranchUtil {
 	 * @param name the name
 	 * @return the number of matching branches
 	 */
-	public static int countByname(String name) {
-		return getPersistence().countByname(name);
+	public static int countBybranchName(String name) {
+		return getPersistence().countBybranchName(name);
 	}
 
 	/**

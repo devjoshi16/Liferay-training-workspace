@@ -214,6 +214,8 @@ public interface DepartmentLocalService
 	public Department fetchDepartmentByUuidAndGroupId(
 		String uuid, long groupId);
 
+	public List<Department> findBydepartmentName(String name);
+
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public ActionableDynamicQuery getActionableDynamicQuery();
 

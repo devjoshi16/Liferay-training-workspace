@@ -14,11 +14,16 @@
 
 package com.aixtor.employee.service.impl;
 
+import com.aixtor.employee.model.Department;
 import com.aixtor.employee.service.base.DesignationLocalServiceBaseImpl;
 
+import com.aixtor.employee.service.persistence.DepartmentPersistence;
 import com.liferay.portal.aop.AopService;
 
 import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
+
+import java.util.List;
 
 /**
  * @author Brian Wing Shun Chan
@@ -29,4 +34,5 @@ import org.osgi.service.component.annotations.Component;
 )
 public class DesignationLocalServiceImpl
 	extends DesignationLocalServiceBaseImpl {
+
 }

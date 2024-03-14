@@ -28,6 +28,5 @@ public class EmployeePersistenceConstants {
 
 	public static final String SERVICE_CONFIGURATION_FILTER =
 		"(&" + ORIGIN_BUNDLE_SYMBOLIC_NAME_FILTER + "(name=service))";
-	public static final String CUSTOM_SQL_QUERY_FOR_SEARCH="customSqlQueryXmlForSearch";
 
 }

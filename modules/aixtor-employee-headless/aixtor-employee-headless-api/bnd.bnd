@@ -1,0 +1,6 @@
+Bundle-Name: aixtor-employee-headless-api
+Bundle-SymbolicName: com.aixtor.employee.headless.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.aixtor.employee.headless.dto.v1_0,\
+	com.aixtor.employee.headless.resource.v1_0

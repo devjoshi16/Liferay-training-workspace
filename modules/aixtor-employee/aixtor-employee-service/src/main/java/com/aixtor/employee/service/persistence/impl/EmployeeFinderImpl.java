@@ -1,5 +1,8 @@
 package com.aixtor.employee.service.persistence.impl;
 
+import com.aixtor.employee.model.Branch;
+import com.aixtor.employee.model.BranchCustom;
+import com.aixtor.employee.model.Department;
 import com.aixtor.employee.model.EmployeeCustom;
 import com.aixtor.employee.service.persistence.EmployeeFinder;
 import com.aixtor.employee.service.persistence.impl.constants.EmployeePersistenceConstants;
@@ -26,7 +29,7 @@ public class EmployeeFinderImpl extends EmployeeFinderBaseImpl implements Employ
 		try {
 			session = openSession();
 
-			String sql = customSQL.get(getClass(), EmployeePersistenceConstants.CUSTOM_SQL_QUERY_FOR_SEARCH);
+			String sql = customSQL.get(getClass(), "customSqlQueryXmlForSearch");
 
 			SQLQuery q = session.createSQLQuery(sql);
 			q.setCacheable(false);
@@ -77,4 +80,137 @@ public class EmployeeFinderImpl extends EmployeeFinderBaseImpl implements Employ
 		return null;
 
 	}
+
+	public List<EmployeeCustom> searchInEmployeesByBranchName(String branchName) {
+		Session session = null;
+
+		try {
+			session = openSession();
+			String sql = customSQL.get(getClass(), "customSqlQueryWhereBranchId");
+			SQLQuery q = session.createSQLQuery(sql);
+			q.setCacheable(false);
+			String searchName="%"+branchName+"%";
+			QueryPos qPos = QueryPos.getInstance(q);
+			qPos.add(searchName);
+
+			List<Object> resultObjList = (List<Object>) QueryUtil.list(q, getDialect(), -1, -1);
+			List<EmployeeCustom> employeeList = new ArrayList<EmployeeCustom>();
+			for (int i = 0; i < resultObjList.size(); i++) {
+				Object[] current = (Object[]) resultObjList.get(i);
+				EmployeeCustom employeeCustom = new EmployeeCustom(
+						(BigInteger) current[0],
+						current[1].toString(),
+						current[2].toString(),
+						current[3].toString(),
+						(BigInteger) current[4],
+						current[5].toString(),
+						current[6].toString(),
+						current[7].toString(),
+						current[8].toString(),
+						(BigInteger) current[9],
+						(BigInteger) current[10],
+						(BigInteger) current[11]
+				);
+				employeeList.add(employeeCustom);
+
+			}
+			return employeeList;
+		} catch (Exception e) {
+
+			System.err.println("error in execption");
+			e.printStackTrace();
+		} finally {
+			closeSession(session);
+		}
+		return null;
+
+	}
+	public List<EmployeeCustom> searchInEmployeesByDepartmentName(String departmentName) {
+		Session session = null;
+
+		try {
+			session = openSession();
+			String sql = customSQL.get(getClass(), "customSqlQueryWhereDepartmentId");
+			SQLQuery q = session.createSQLQuery(sql);
+			q.setCacheable(false);
+			String searchName="%"+departmentName+"%";
+			QueryPos qPos = QueryPos.getInstance(q);
+			qPos.add(searchName);
+
+			List<Object> resultObjList = (List<Object>) QueryUtil.list(q, getDialect(), -1, -1);
+			List<EmployeeCustom> employeeList = new ArrayList<EmployeeCustom>();
+			for (int i = 0; i < resultObjList.size(); i++) {
+				Object[] current = (Object[]) resultObjList.get(i);
+				EmployeeCustom employeeCustom = new EmployeeCustom(
+						(BigInteger) current[0],
+						current[1].toString(),
+						current[2].toString(),
+						current[3].toString(),
+						(BigInteger) current[4],
+						current[5].toString(),
+						current[6].toString(),
+						current[7].toString(),
+						current[8].toString(),
+						(BigInteger) current[9],
+						(BigInteger) current[10],
+						(BigInteger) current[11]
+				);
+				employeeList.add(employeeCustom);
+
+			}
+			return employeeList;
+		} catch (Exception e) {
+
+			System.err.println("error in execption");
+			e.printStackTrace();
+		} finally {
+			closeSession(session);
+		}
+		return null;
+
+	}
+	public List<BranchCustom> CustomBranchByName(String branchName) {
+		Session session = null;
+
+		try {
+			session = openSession();
+			String sql = customSQL.get(getClass(), "CustomBranchSqlQuery");
+			SQLQuery q = session.createSQLQuery(sql);
+			q.setCacheable(false);
+			String searchName="%"+branchName+"%";
+			QueryPos qPos = QueryPos.getInstance(q);
+			qPos.add(searchName);
+			List<Object> resultObjList = (List<Object>) QueryUtil.list(q, getDialect(), -1, -1);
+
+			System.out.println(resultObjList);
+
+			List<BranchCustom> employeeList = new ArrayList<BranchCustom>();
+
+
+			for (int i = 0; i < resultObjList.size(); i++) {
+				Object[] current = (Object[]) resultObjList.get(i);
+				BranchCustom employeeCustom = new BranchCustom(
+						(BigInteger) current[0],
+						current[1].toString(),
+						current[2].toString(),
+						current[3].toString(),
+						current[4].toString()
+
+				);
+				employeeList.add(employeeCustom);
+
+			}
+			return employeeList;
+		} catch (Exception e) {
+
+			System.err.println("error in execption");
+			e.printStackTrace();
+		} finally {
+			closeSession(session);
+		}
+		return null;
+
+	}
+
+
 }

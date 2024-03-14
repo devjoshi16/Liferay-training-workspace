@@ -75,6 +75,13 @@ public class EmployeeLocalServiceWrapper
 		return _employeeLocalService.createPersistedModel(primaryKeyObj);
 	}
 
+	@Override
+	public java.util.List<com.aixtor.employee.model.BranchCustom>
+		CustomBranchByName(String branchName) {
+
+		return _employeeLocalService.CustomBranchByName(branchName);
+	}
+
 	/**
 	 * Deletes the employee from the database. Also notifies the appropriate model listeners.
 	 *
@@ -387,6 +394,21 @@ public class EmployeeLocalServiceWrapper
 		searchInEmployees(String searchName) {
 
 		return _employeeLocalService.searchInEmployees(searchName);
+	}
+
+	@Override
+	public java.util.List<com.aixtor.employee.model.EmployeeCustom>
+		searchInEmployeesByBranchName(String branchName) {
+
+		return _employeeLocalService.searchInEmployeesByBranchName(branchName);
+	}
+
+	@Override
+	public java.util.List<com.aixtor.employee.model.EmployeeCustom>
+		searchInEmployeesByDepartmentName(String departmentName) {
+
+		return _employeeLocalService.searchInEmployeesByDepartmentName(
+			departmentName);
 	}
 
 	/**
