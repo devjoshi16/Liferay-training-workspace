@@ -1,0 +1,10 @@
+Bundle-Name: aixtor-employee-export
+Bundle-SymbolicName: com.aixtor.employee.file.export
+Bundle-Version: 1.0.0
+Export-Package: com.aixtor.employee.file.export.constants
+
+Bundle-ClassPath:.,lib/itext.jar
+
+-includeresource:lib/itext.jar=itextpdf-*.jar
+
+Import-Package = !org.apache.jcp.xml.dsig.internal.dom,!org.bouncycastle.*,!com.itextpdf.io.image.*,com.itextpdf.io.image.ImageDataFactory.*,*

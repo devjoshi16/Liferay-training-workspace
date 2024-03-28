@@ -6,16 +6,8 @@
 taglib uri="http://liferay.com/tld/portlet" prefix="liferay-portlet" %><%@
 taglib uri="http://liferay.com/tld/theme" prefix="liferay-theme" %><%@
 taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
-<%@ page import="java.util.*" %>
 
 
-<%@page import="com.aixtor.employee.model.Department" %>
-<%@page import="com.aixtor.employee.service.EmployeeLocalService"%>
-<%@ page import="com.aixtor.employee.logs.portlet.AixtorEmployeeLogsPortlet" %>
-<%@ page import="com.aixtor.employee.model.EmployeeCustom" %>
-<%@ page import="java.util.Date" %>
-<%@ page import="java.text.DateFormat" %>
-<%@ page import="java.text.SimpleDateFormat" %>
 <liferay-theme:defineObjects />
 
 <portlet:defineObjects />
