@@ -1,0 +1,4 @@
+Bundle-Name: aixtor-commerce-highcharts
+Bundle-SymbolicName: com.aixtor.commerce.highcharts
+Bundle-Version: 1.0.0
+Export-Package: com.aixtor.commerce.highcharts.constants
